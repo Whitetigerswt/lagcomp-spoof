@@ -6,5 +6,5 @@ Hack client side SA-MP to allow for OnPlayerWeaponShot and GetPlayerLastShotVect
 
 Download
 -------------
-Download compiled version here: https://github.com/Whitetigerswt/lagcomp_spoof/releases/
+Download compiled version here: https://github.com/Whitetigerswt/lagcomp-Extension/releases/
 and have your players start using it too, then OnPlayerWeaponShot and GetPlayerLastShotVectors will work no matter if lagcomp is on or off.
