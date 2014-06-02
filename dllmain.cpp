@@ -1,7 +1,7 @@
 #include "memory.h"
 
 void WINAPI Load();
-
+ HMODULE hMod = NULL;
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
                        LPVOID lpReserved
@@ -10,6 +10,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	switch (ul_reason_for_call)
 	{
 	case DLL_PROCESS_ATTACH:
+		hMod = hModule;
 		if ( CreateThread( 0, 0, (LPTHREAD_START_ROUTINE)Load, NULL, 0, 0) == NULL ) {
 			ExitProcess(GetLastError());
 			return FALSE; 
@@ -26,4 +27,5 @@ void WINAPI Load() {
 	memcpy((void*)(sampdll + 0x22C799), "\x90\x90\x90\x90\x90\x90", 6);
 	DWORD oldProt2 = NULL;
 	VirtualProtect((void*)(sampdll + 0x22C799), 6, oldProt, &oldProt2);
+	FreeLibraryAndExitThread(hMod, 0);
 }
