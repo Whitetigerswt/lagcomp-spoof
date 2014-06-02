@@ -1,10 +1,15 @@
-Lagcomp-Extension
+Lagcomp-Spoof
 =============
 
-Hack client side SA-MP to allow for OnPlayerWeaponShot and GetPlayerLastShotVectors work for servers with lagcomp off, Clients must install this into their game and it cannot be done from server-side.
+This is a proof of concept hack for SA-MP clients, created so it can be fixed in future SA-MP versions. Players who install this mod, who's friends also install this mod can skin shoot each other on lagcomp disabled servers.
 
+How to detect this hack in the mean time.
+------------
 
-Download
--------------
-Download compiled version here: https://github.com/Whitetigerswt/lagcomp-Extension/releases/
-and have your players start using it too, then OnPlayerWeaponShot and GetPlayerLastShotVectors will work no matter if lagcomp is on or off.
+```cpp
+public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
+{
+  new lagcomp = GetServerVarAsInt("lagcompmode");
+  if(lagcomp == 0) return 0;
+}
+```
