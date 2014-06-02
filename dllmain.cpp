@@ -1,7 +1,7 @@
-#include "memory.h"
+#include <Windows.h>
 
 void WINAPI Load();
- HMODULE hMod = NULL;
+HMODULE hMod = NULL;
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
                        LPVOID lpReserved
