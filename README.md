@@ -9,7 +9,6 @@ How to detect this hack in the mean time.
 ```cpp
 public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
 {
-  new lagcomp = GetServerVarAsInt("lagcompmode");
-  if(lagcomp == 0) return 0;
+  return GetServerVarAsInt("lagcompmode");
 }
 ```
