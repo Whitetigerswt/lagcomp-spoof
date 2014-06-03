@@ -7,8 +7,12 @@ How to detect this hack in the mean time.
 ------------
 
 ```cpp
+// OnPlayerWeaponShot will be called in lagcompmode OFF servers.
 public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY, Float:fZ)
 {
+  // it will be 0 in lagcompmode off servers
+  // and 1 with lag comp mode on servers.
+  // returning 0 always will prevent skin shoot in lagcompmode off servers.
   return GetServerVarAsInt("lagcompmode");
 }
 ```
