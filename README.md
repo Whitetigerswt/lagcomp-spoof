@@ -17,3 +17,5 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float:fX, Float:fY
   // This will make skin shoot shots account to nothing.
 }
 ```
+
+Adding these lines of code is important. if you do not return 0 in OnPlayerWeaponShot in a lagcomp off servers, you leave open the potential for players to do double damage, and skin shoot each other.
