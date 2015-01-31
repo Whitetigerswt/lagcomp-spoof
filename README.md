@@ -1,7 +1,11 @@
 Lagcomp-Spoof
 =============
 
-The idea behind this mod was to allow OnPlayerWeaponShot and GetPlayerLastShotVectors to lagcomp disabled servers. If you do not follow the instructions below exactly, players WILL be able to skin shoot each other if they are both using this mod. It's very important that server owners update their scripts with the following:
+The idea behind this mod was to allow OnPlayerWeaponShot and GetPlayerLastShotVectors to lagcomp disabled servers. 
+
+- Only supports 0.3z client (not 0.3z-R2)
+
+If you do not follow the instructions below exactly, players WILL be able to skin shoot each other if they are both using this mod. It's very important that server owners update their scripts with the following:
 
 
 Adding support to this mod in your Lagcomp off server.
